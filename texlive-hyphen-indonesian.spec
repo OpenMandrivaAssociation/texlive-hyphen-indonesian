@@ -46,12 +46,12 @@ Melayu).
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-indonesian <<EOF
-%% from hyphen-indonesian:
+\%\% from hyphen-indonesian:
 indonesian loadhyph-id.tex
 EOF
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-indonesian <<EOF
-%% from hyphen-indonesian:
+\%\% from hyphen-indonesian:
 \addlanguage{indonesian}{loadhyph-id.tex}{}{2}{2}
 EOF
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
