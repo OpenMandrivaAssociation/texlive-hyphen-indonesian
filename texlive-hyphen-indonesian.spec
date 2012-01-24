@@ -5,8 +5,8 @@
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-hyphen-indonesian
-Version:	20111103
-Release:	2
+Version:	20120124
+Release:	1
 Summary:	Indonesian hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -46,14 +46,16 @@ Melayu).
 %install
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-indonesian <<EOF
-\%\% from hyphen-indonesian:
+\%% from hyphen-indonesian:
 indonesian loadhyph-id.tex
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_dat_d}/hyphen-indonesian
 mkdir -p %{buildroot}%{_texmf_language_def_d}
 cat > %{buildroot}%{_texmf_language_def_d}/hyphen-indonesian <<EOF
-\%\% from hyphen-indonesian:
+\%% from hyphen-indonesian:
 \addlanguage{indonesian}{loadhyph-id.tex}{}{2}{2}
 EOF
+perl -pi -e 's|\\%%|%%|;' %{buildroot}%{_texmf_language_def_d}/hyphen-indonesian
 mkdir -p %{buildroot}%{_texmf_language_lua_d}
 cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-indonesian <<EOF
 -- from hyphen-indonesian:
