@@ -1,11 +1,11 @@
-# revision 23092
+# revision 25990
 # category TLCore
 # catalog-ctan undef
 # catalog-date undef
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-hyphen-indonesian
-Version:	20120124
+Version:	20120611
 Release:	1
 Summary:	Indonesian hyphenation patterns
 Group:		Publishing
