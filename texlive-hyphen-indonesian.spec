@@ -68,3 +68,25 @@ cat > %{buildroot}%{_texmf_language_lua_d}/hyphen-indonesian <<EOF
 		hyphenation = 'hyph-id.hyp.txt',
 	},
 EOF
+
+
+%changelog
+* Mon Jun 11 2012 Paulo Andrade <pcpa@mandriva.com.br> 20120611-1
++ Revision: 804743
+- Update to latest release.
+
+* Tue Jan 24 2012 Paulo Andrade <pcpa@mandriva.com.br> 20120124-1
++ Revision: 767560
+- Add workaround to rpm bug that broke hyphenation files
+
+* Wed Jan 11 2012 Paulo Andrade <pcpa@mandriva.com.br> 20111103-2
++ Revision: 759920
+- Rebuild to reduce used resources
+
+* Sat Nov 05 2011 Paulo Andrade <pcpa@mandriva.com.br> 20111103-1
++ Revision: 718662
+- texlive-hyphen-indonesian
+- texlive-hyphen-indonesian
+- texlive-hyphen-indonesian
+- texlive-hyphen-indonesian
+
