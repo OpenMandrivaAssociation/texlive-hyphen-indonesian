@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-hyphen-indonesian
 Version:	20120611
-Release:	3
+Release:	4
 Summary:	Indonesian hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
