@@ -5,7 +5,7 @@
 # catalog-license undef
 # catalog-version undef
 Name:		texlive-hyphen-indonesian
-Version:	20170414
+Version:	20180303
 Release:	1
 Summary:	Indonesian hyphenation patterns
 Group:		Publishing
