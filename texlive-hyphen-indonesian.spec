@@ -6,7 +6,7 @@
 # catalog-version undef
 Name:		texlive-hyphen-indonesian
 Version:	20180303
-Release:	1
+Release:	2
 Summary:	Indonesian hyphenation patterns
 Group:		Publishing
 URL:		http://tug.org/texlive
@@ -33,6 +33,8 @@ Melayu).
 
 #-----------------------------------------------------------------------
 %files
+%{_texmfdistdir}/tex/generic/hyph-utf8/loadhyph/*
+%{_texmfdistdir}/tex/generic/hyph-utf8/patterns/*/*
 %_texmf_language_dat_d/hyphen-indonesian
 %_texmf_language_def_d/hyphen-indonesian
 %_texmf_language_lua_d/hyphen-indonesian
@@ -44,6 +46,9 @@ Melayu).
 %build
 
 %install
+mkdir -p %{buildroot}%{_texmfdistdir}
+cp -fpar tex %{buildroot}%{_texmfdistdir}
+
 mkdir -p %{buildroot}%{_texmf_language_dat_d}
 cat > %{buildroot}%{_texmf_language_dat_d}/hyphen-indonesian <<EOF
 \%% from hyphen-indonesian:
