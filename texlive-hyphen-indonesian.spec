@@ -13,9 +13,34 @@ BuildArch:	noarch
 BuildSystem:	texlive
 Requires:	texlive(hyph-utf8)
 Requires:	texlive(hyphen-base)
-Provides:	texlive(%{tl_name}) = %{tl_revision}
+Requires:	texlive-tlpkg
+Provides:	texlive(%{tl_name}) = %{version}
 
 %description
 Hyphenation patterns for Indonesian (Bahasa Indonesia) in ASCII
 encoding. They are probably also usable for Malay (Bahasa Melayu).
 
+
+%install -a
+mkdir -p %{buildroot}%{_texmf_language_dat_d}
+cat > %{buildroot}%{_texmf_language_dat_d}/%{tl_name} <<'TL_HYPHEN_EOF'
+% from hyphen-indonesian:
+indonesian loadhyph-id.tex
+TL_HYPHEN_EOF
+mkdir -p %{buildroot}%{_texmf_language_def_d}
+cat > %{buildroot}%{_texmf_language_def_d}/%{tl_name} <<'TL_HYPHEN_EOF'
+% from hyphen-indonesian:
+\addlanguage{indonesian}{loadhyph-id.tex}{}{2}{2}
+TL_HYPHEN_EOF
+mkdir -p %{buildroot}%{_texmf_language_lua_d}
+cat > %{buildroot}%{_texmf_language_lua_d}/%{tl_name} <<'TL_HYPHEN_EOF'
+-- from hyphen-indonesian:
+['indonesian'] = {
+	loader = 'loadhyph-id.tex',
+	lefthyphenmin = 2,
+	righthyphenmin = 2,
+	synonyms = {  },
+	patterns = 'hyph-id.pat.txt',
+	hyphenation = 'hyph-id.hyp.txt',
+},
+TL_HYPHEN_EOF
